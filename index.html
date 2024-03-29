@@ -25,6 +25,10 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadTodos()
+        });
+
         const createTodo = todo => {
             const itemContainerAttributes = {
                 "class": "list-group-item",
