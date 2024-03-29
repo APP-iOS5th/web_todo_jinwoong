@@ -59,10 +59,16 @@
 
             var checkBox = document.createElement("input");
             checkBox = configure(checkBox, checkBoxAttributes);
+            checkBox.checked = isDone;
             checkBox.onclick = event => {
-                if (event.currentTarget.checkBox) {
-                    
-                }
+                const todo = {
+                    id: id,
+                    content: {
+                        text: text,
+                        isDone: event.currentTarget.checked,
+                    },
+                };
+                storeTodo(todo);
             };
 
             var label = document.createElement("label");
