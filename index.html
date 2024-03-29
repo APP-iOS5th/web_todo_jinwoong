@@ -74,6 +74,20 @@
         const storeTodo = todo => {
             localStorage.setItem(todo.id, todo.content);
         };
+
+        const onClick = () => {
+            const content = document.getElementById("todoInput").value;
+            if (content) {
+                const todo = {
+                    id: crypto.randomUUID(),
+                    content: content,
+                };
+
+                createTodo(todo);
+                storeTodo(todo);
+                document.getElementById("todoInput").value = "";
+            }
+        };
     </script>
 </body>
 
