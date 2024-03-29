@@ -40,7 +40,7 @@
             const isDone = todo.content.isDone;
 
             const itemContainerAttributes = {
-                "class": "list-group-item",
+                "class": isDone ? "list-group-item done" : "list-group-item",
             };
             const checkBoxAttributes = {
                 "type": "checkbox",
@@ -61,6 +61,12 @@
             checkBox = configure(checkBox, checkBoxAttributes);
             checkBox.checked = isDone;
             checkBox.onclick = event => {
+                if (event.currentTarget.checked) {
+                    event.currentTarget.parentNode.classList.add("done");
+                } else {
+                    event.currentTarget.parentNode.classList.remove("done");
+                }
+                
                 const todo = {
                     id: id,
                     content: {
