@@ -66,7 +66,7 @@
                 } else {
                     event.currentTarget.parentNode.classList.remove("done");
                 }
-                
+
                 const todo = {
                     id: id,
                     content: {
@@ -118,15 +118,20 @@
             }
         };
 
+        // TODO: validation check
         const loadTodos = () => {
             Object
                 .keys(localStorage)
                 .forEach(key => {
-                    const todo = {
-                        id: key,
-                        content: JSON.parse(localStorage.getItem(key)),
-                    };
-                    createTodo(todo);
+                    const content = JSON.parse(localStorage.getItem(key));
+
+                    if (Object.hasOwn(content, "text") && Object.hasOwn(content, "isDone")) {
+                        const todo = {
+                            id: key,
+                            content: content,
+                        };
+                        createTodo(todo);
+                    }
                 });
         };
     </script>
