@@ -106,7 +106,6 @@
                         isDone: false
                     },
                 };
-
                 createTodo(todo);
                 storeTodo(todo);
                 document.getElementById("todoInput").value = "";
@@ -121,7 +120,6 @@
                         id: key,
                         content: JSON.parse(localStorage.getItem(key)),
                     };
-
                     createTodo(todo);
                 });
         };
