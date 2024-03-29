@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
         crossorigin="anonymous" />
     <title>Web Todo Jinwoong</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row justify-content-center">
@@ -25,7 +27,7 @@
     <script>
         const createTodo = todo => {
             const itemContainerAttributes = {
-                "class":  "list-group-item",
+                "class": "list-group-item",
             };
             const checkBoxAttributes = {
                 "type": "checkbox",
@@ -47,7 +49,7 @@
 
             var label = document.createElement("label");
             label = configure(label, labelAttributes);
-            label.onclick = event => { 
+            label.onclick = event => {
                 console.log(event);
             };
             label.textContent = todo.content;
@@ -60,14 +62,15 @@
 
         const configure = (element, attributes) => {
             Object
-            .entries(attributes)
-            .forEach(entry => {
-                const [key, value] = entry;
-                element.setAttribute(key, value);
-            });
+                .entries(attributes)
+                .forEach(entry => {
+                    const [key, value] = entry;
+                    element.setAttribute(key, value);
+                });
 
             return element;
         };
+
     </script>
 </body>
 </html>
