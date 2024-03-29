@@ -71,6 +71,10 @@
             return element;
         };
 
+        const storeTodo = todo => {
+            localStorage.setItem(todo.id, todo.content);
+        };
     </script>
 </body>
+
 </html>
