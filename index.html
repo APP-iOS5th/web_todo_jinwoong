@@ -88,6 +88,19 @@
                 document.getElementById("todoInput").value = "";
             }
         };
+
+        const loadTodos = () => {
+            Object
+                .keys(localStorage)
+                .forEach(key => {
+                    const todo = {
+                        id: key,
+                        content: localStorage.getItem(key),
+                    };
+
+                    createTodo(todo);
+                });
+        };
     </script>
 </body>
 
